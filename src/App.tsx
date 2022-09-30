@@ -13,11 +13,9 @@ type PropsType =
 function App() {
     const [todos, setTodos] = useState<Array<PropsType>>([])
 
-
     useEffect(() =>{ fetch('https://jsonplaceholder.typicode.com/todos/')
         .then(response => response.json())
         .then(json => setTodos(json))}, [])
-
 
     const onClickHandler = () => {
         setTodos([])
